@@ -61,7 +61,7 @@ Let's take the singular values be runnig the following line of code:
 
 Now let's approximate our matrix A by a low rank matrix Ak using diffrent values for k:
 
-	%k = 1, 10, 100, 200 later on we will try all those values
+	%k = 1, 10, 100 later on we will try all those values
 	k = 1; 
 	Ak = U(:,1:k)*S(1:k,1:k)*V(:,1:k)';
 
@@ -73,4 +73,8 @@ Now let's approximate our matrix A by a low rank matrix Ak using diffrent values
 
 After executing the code, here is our result for k=1 :
 
-<img src='plots/k_1.png'>
+<img src='plots/k_1.PNG'>
+
+Now let's set k=10:
+
+<img src='plots/k_10.PNG'>
