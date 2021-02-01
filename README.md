@@ -32,11 +32,13 @@ The SVD is not unique. It is always possible to choose the decomposition so that
 
 Let's read an image from our choice :
 
+	
+	% I loaded a color image
+	RGB = imread('cat.jpg');
 
-	RGB = imread('me.jpg'); % I loaded a color image 
-	A =  mat2gray(RGB); % make it 2-dimentional 
-	A = rgb2gray(A); % convert image to grayscale image
-	A = imresize(A,[512 512]); % resize the image : 512 by 512 
-	figure,imagesc(A); colormap gray; axis image;
-	title('ORIGINAL') % The image is already double
-
+	% covert image to grayscale image
+	A =  mat2gray(RGB);  
+	A = rgb2gray(A); 
+	
+	% resize the image : 512 by 512
+	A = imresize(A,[512 512]); 
