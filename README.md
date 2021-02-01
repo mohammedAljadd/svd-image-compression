@@ -78,3 +78,9 @@ After executing the code, here is our result for k=1 :
 Now let's set k=10:
 
 <img src='plots/k_10.PNG'>
+
+As we increase k value the quality of the compressed image get well.
+
+Now we will try k = 100:
+
+<img src='plots/k_100.PNG'>
