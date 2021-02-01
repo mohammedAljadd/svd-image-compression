@@ -42,3 +42,35 @@ Let's read an image from our choice :
 	
 	% resize the image : 512 by 512
 	A = imresize(A,[512 512]); 
+
+
+The image is a matrix 512 by 512. Every pixel is represented in the matrix by a
+number from 0 to 512. We are looking for compressing that image using SVD
+image compression method. Using this method, we will retrieve some
+information from the image but the image quality have to remain good.
+
+Now let's perform svd on the matrix A:
+
+	[U, S, V] = svd(A);
+
+Now we have the three matrices needed!
+
+Let's take the singular values be runnig the following line of code:
+
+	[U, S, V] = svd(A);
+
+Now let's approximate our matrix A by a low rank matrix Ak using diffrent values for k:
+
+	%k = 1, 10, 100, 200 later on we will try all those values
+	k = 1; 
+	Ak = U(:,1:k)*S(1:k,1:k)*V(:,1:k)';
+
+	%plot the original image next to compressed one 
+	subplot(1,2,1); 
+	imagesc(A); colormap gray; axis image; title('ORIGINAL'); 
+	subplot(1,2,2);
+	imagesc(Ak); colormap gray; axis image; title('1-image');
+
+After executing the code, here is our result for k=1 :
+
+<img src='plots/k_1.png'>
