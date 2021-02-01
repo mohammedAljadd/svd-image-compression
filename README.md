@@ -84,3 +84,22 @@ As we increase k value the quality of the compressed image get well.
 Now we will try k = 100:
 
 <img src='plots/k_100.PNG'>
+
+The bigger k is, the more Ak approaches to A, this means that as k increases,
+the error of A - Ak  gets smaller so the image gets clearer.
+
+To understand better this, let's plots the singular values:
+	
+	sv = diag(S);
+	plot(sv),title('Singular Values of the Image'),xlabel('Index'),ylabel('Singular Value') 
+
+<img src='plots\s_values.PNG'>
+
+We are observing that many singular values are quit small or equal to zero.
+The other singular values take big values from the first to the 100st singular value. 
+
+Even if we retrieved some of them, this gave us a good approximation to 
+original matrix A which means that we will have a good compressed image.
+
+The first 100 singular values are quit big so ‖A −  A100‖  will be quite small
+because σ1 ≥ σ2 ≥ σ3  ≥ … ≥ σn . A100 is a good approximation for A.
