@@ -22,5 +22,21 @@ The SVD is not unique. It is always possible to choose the decomposition so that
 
 
     As the Eckart-Young theorem says, we can approximate A by a low rank matrix Ak: 
-    A = σ1v1u1 + σ2v2u2 + … + σnvnun, where σ's are the diagonals of ∑, v's are the entries of V and u's are the entries of U
+    A = σ1v1u1 + σ2v2u2 + … + σnvnun, where σ's are the diagonals of ∑, v's are the entries of V 
+    and u's are the entries of U
+    
     so Ak = σ1v1u1 + σ2v2u2 + … + σkvkuk , k<n
+
+
+# Coding part
+
+Let's read an image from our choice :
+
+
+	RGB = imread('me.jpg'); % I loaded a color image 
+	A =  mat2gray(RGB); % make it 2-dimentional 
+	A = rgb2gray(A); % convert image to grayscale image
+	A = imresize(A,[512 512]); % resize the image : 512 by 512 
+	figure,imagesc(A); colormap gray; axis image;
+	title('ORIGINAL') % The image is already double
+
